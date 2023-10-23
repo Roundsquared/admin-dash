@@ -4,7 +4,7 @@ body{
 .container{
     display:grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: .8fr 4fr;
+    grid-template-rows: 1fr 6fr;
     height:100%;
 }
 .sidebar{
@@ -12,7 +12,11 @@ body{
     grid-column:1;
     background-color: aquamarine;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto .5fr .5fr .5fr .5fr;
+    grid-row-gap:2rem;
+}
+.sidebar .item{
+    margin-bottom:1rem;
 }
 .nav{
     grid-row:1;
@@ -43,15 +47,16 @@ body{
     grid-column: 1;
     display:grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: repeat(3,1fr);
+    align-items: center;
+    align-content: center;
 }
 .nav-actions{
     grid-row:1;
     grid-column: 2;
     display: grid;
     background-color: blanchedalmond;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
+    align-items: center;
+    align-content: center;
 }
 .buttons ul {
     display: grid;
@@ -95,6 +100,13 @@ button{
     grid-column: 2;
     margin:0;
 }
+.userimg{
+    align-items: center;
+    align-content: center;
+    grid-row: span 2/3;
+    display: grid;
+    justify-content: center;
+}
 .item{
     display:grid;
     grid-template-columns: .5fr 2 fr;
@@ -115,6 +127,8 @@ button{
     grid-column: 2/4;
     display: grid;
     grid-template-columns: 1fr 3fr;
+    align-items: center;
+    align-content: center;
 }
 .search input{
     margin-right:2rem;
@@ -139,6 +153,7 @@ img{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    column-gap: .5rem;
 }
 .projects{
     display: grid;
@@ -207,4 +222,17 @@ img{
 }
 .trending h3{
     grid-row:1;
+}
+.sidebar,
+.projects,
+.trending,
+.announcements,
+.search,
+.nav-actions
+{
+    padding:2rem;
+}
+.alarm,
+.profile{
+    grid-row:2;
 }
